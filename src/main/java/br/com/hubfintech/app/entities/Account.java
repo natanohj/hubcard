@@ -21,6 +21,8 @@ public class Account {
     private String name;
     private Date created_at;
     private Long account_parent_id;
+    @SuppressWarnings("unused")
+	private enum status{ ATIVA,BLOQUEADA,CANCELADA };
     
     public Account() {
     	this.created_at = new Date();

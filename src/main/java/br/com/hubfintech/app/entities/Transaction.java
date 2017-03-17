@@ -8,10 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import br.com.hubfintech.app.validations.AccountPersistListener;
+import br.com.hubfintech.app.validations.TransactionPersistListener;
 
 @Entity
-@EntityListeners(AccountPersistListener.class)
+@EntityListeners(TransactionPersistListener.class)
 public class Transaction {
 
     @Id
@@ -20,6 +20,9 @@ public class Transaction {
     @NotNull
     private Long idAccount;
     private Date created_at;
+    private Double money;
+    private String codeTransaction; // codigo alfanumerico 
+    
     
     public Transaction() {
     	this.created_at = new Date();
@@ -36,5 +39,23 @@ public class Transaction {
 	public void setIdAccount(Long idAccount) {
 		this.idAccount = idAccount;
 	}
+
+	public Double getMoney() {
+		return money;
+	}
+
+	public void setMoney(Double money) {
+		this.money = money;
+	}
+
+	public String getCodeTransaction() {
+		return codeTransaction;
+	}
+
+	public void setCodeTransaction(String codeTransaction) {
+		this.codeTransaction = codeTransaction;
+	}
+
+
 
 }

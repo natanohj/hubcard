@@ -18,10 +18,10 @@ public class Transaction {
     @GeneratedValue
     private Long id;
     @NotNull
-    private Long idAccount;
+    private Long id_account;
     private Date created_at;
     private Double money;
-    private String codeTransaction; // codigo alfanumerico 
+    private String code_transaction; // codigo alfanumerico 
     
     
     public Transaction() {
@@ -32,12 +32,12 @@ public class Transaction {
 		return created_at;
 	}
 
-	public Long getIdAccount() {
-		return idAccount;
+	public Long getid_account() {
+		return id_account;
 	}
 
-	public void setIdAccount(Long idAccount) {
-		this.idAccount = idAccount;
+	public void setid_account(Long id_account) {
+		this.id_account = id_account;
 	}
 
 	public Double getMoney() {
@@ -48,12 +48,12 @@ public class Transaction {
 		this.money = money;
 	}
 
-	public String getCodeTransaction() {
-		return codeTransaction;
+	public String getcode_transaction() {
+		return code_transaction;
 	}
 
-	public void setCodeTransaction(String codeTransaction) {
-		this.codeTransaction = codeTransaction;
+	public void setcode_transaction(String code_transaction) {
+		this.code_transaction = code_transaction;
 	}
 
 

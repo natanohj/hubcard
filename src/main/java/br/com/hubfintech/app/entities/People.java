@@ -18,7 +18,7 @@ public class People {
     @GeneratedValue
     private Long id;
     @NotNull
-    private Long idAccount;
+    private Long id_account;
     private Date created_at;
     
     public People() {
@@ -29,12 +29,12 @@ public class People {
 		return created_at;
 	}
 
-	public Long getIdAccount() {
-		return idAccount;
+	public Long getid_account() {
+		return id_account;
 	}
 
-	public void setIdAccount(Long idAccount) {
-		this.idAccount = idAccount;
+	public void setid_account(Long id_account) {
+		this.id_account = id_account;
 	}
 
 }

@@ -12,42 +12,29 @@ import br.com.hubfintech.app.validations.AccountPersistListener;
 
 @Entity
 @EntityListeners(AccountPersistListener.class)
-public class Account {
+public class Transaction {
 
     @Id
     @GeneratedValue
     private Long id;
     @NotNull
-    private String name;
+    private Long idAccount;
     private Date created_at;
-    private Long account_parent_id;
     
-    public Account() {
+    public Transaction() {
     	this.created_at = new Date();
     }
 
-    public Account(String name) {   	
-    		this.name = name;    	
-    }
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Date getCreated_at() {
+    public Date getCreated_at() {
 		return created_at;
 	}
 
-	public Long getAccount_parent_id() {
-		return account_parent_id;
+	public Long getIdAccount() {
+		return idAccount;
 	}
 
-	public void setAccount_parent_id(Long account_parent_id) {
-		this.account_parent_id = account_parent_id;
+	public void setIdAccount(Long idAccount) {
+		this.idAccount = idAccount;
 	}
 
 }

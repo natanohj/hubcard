@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import br.com.hubfintech.app.validations.AccountPersistListener;
@@ -29,7 +28,7 @@ public class Account {
 	private enum status{ ATIVA,BLOQUEADA,CANCELADA };
 	
 	@ManyToOne
-	@JoinColumn(name="peopleId")
+	@JoinColumn(name="peopleId",insertable=true,updatable=true)
 	private People people;
     
     public Account() {
@@ -58,6 +57,14 @@ public class Account {
 
 	public void setAccountParent(Account accountParent) {
 		this.accountParent = accountParent;
+	}
+
+	public People getPeople() {
+		return people;
+	}
+
+	public void setPeople(People people) {
+		this.people = people;
 	}
 
 

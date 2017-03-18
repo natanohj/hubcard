@@ -1,12 +1,8 @@
 package br.com.hubfintech.app.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-
-import br.com.hubfintech.app.validations.AccountPersistListener;
 
 @Entity
-@EntityListeners(AccountPersistListener.class)
 public class PeopleCompany extends People {
 	
 	 private String cnpj;

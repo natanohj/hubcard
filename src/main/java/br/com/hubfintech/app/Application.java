@@ -1,7 +1,10 @@
 package br.com.hubfintech.app;
 
+import java.sql.SQLException;
+
 import javax.sql.DataSource;
 
+import org.h2.tools.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +27,19 @@ public class Application {
 	public DataSource dataSource() {
 	    return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
 	}
+    
+    @Bean
+    public Server h2Server() throws SQLException{
+		new Server();
+		return Server.createTcpServer().start();    	
+    }
+    
+    @Bean
+    public Server h2WebServer() throws SQLException{
+		new Server();
+		return Server.createWebServer().start();    	
+    }
+    
 }
 
 

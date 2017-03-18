@@ -20,7 +20,7 @@ public class PeoplePerson extends People  {
 	 @NotNull
 	 private String fullName;
 	 @NotNull
-	 private Date dtBirth;
+	 private Date birthDate;
 	 
 	public String getCpf() {
 		return cpf;
@@ -35,10 +35,10 @@ public class PeoplePerson extends People  {
 		this.fullName = fullName;
 	}
 	public Date getDtBirth() {
-		return dtBirth;
+		return birthDate;
 	}
 	public void setDtBirth(Date dtBirth) {
-		this.dtBirth = dtBirth;
+		this.birthDate = dtBirth;
 	}
 
 }
